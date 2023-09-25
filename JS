@@ -1,0 +1,45 @@
+const choices = ["rock", "paper", "scissors"];
+
+const computerChoice = () => choices[Math.floor(Math.random() * 3)];
+
+const determineWinner = (playerChoice, computerChoice) => {
+    if (playerChoice === computerChoice) return "It's a tie!";
+    if ((playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")) {
+        return "You win!";
+    }
+    return "Computer wins!";
+};
+
+document.querySelectorAll(".choice").forEach(choice => {
+    choice.addEventListener("click", () => {
+        const playerChoice = choice.id;
+        const compChoice = computerChoice();
+        document.querySelector("#computer-choice").className = `fas fa-hand-${compChoice} choice`;
+        const result = determineWinner(playerChoice, compChoice);
+        document.querySelector("#result-text").textContent = result;
+    });
+});
+
+// Function to reset the game
+const resetGame = () => {
+    document.querySelector("#computer-choice").className = "fas fa-question choice";
+    document.querySelector("#result-text").textContent = "Result";
+};
+
+// Event listener for the Refresh button
+document.querySelector("#refresh-button").addEventListener("click", () => {
+    resetGame();
+});
+
+document.querySelectorAll(".choice").forEach(choice => {
+    choice.addEventListener("click", () => {
+        resetGame(); // Reset the game when the player makes a choice
+        const playerChoice = choice.id;
+        const compChoice = computerChoice();
+        document.querySelector("#computer-choice").className = `fas fa-hand-${compChoice} choice`;
+        const result = determineWinner(playerChoice, compChoice);
+        document.querySelector("#result-text").textContent = result;
+    });
+});
