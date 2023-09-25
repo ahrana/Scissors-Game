@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors Game</title>
+    <!-- Include Bootstrap and Font Awesome CSS via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-5">Rock, Paper, Scissors Game</h1>
+        <div class="game-container mt-4">
+           <div class="player">
+    <h2>Your Choice</h2>
+    <div class="choices">
+        <i class="fas fa-hand-rock choice" id="rock"></i>
+        <i class="fas fa-hand-paper choice" id="paper"></i>
+        <i class="fas fa-hand-scissors choice" id="scissors"></i>
+    </div>
+    <button id="refresh-button">Refresh</button>
+</div>
+
+            <div class="computer">
+                <h2>Computer's Choice</h2>
+                <i class="fas fa-question choice" id="computer-choice"></i>
+            </div>
+        </div>
+        <div class="result mt-4">
+            <h2 id="result-text">Result</h2>
+        </div>
+    </div>
+  <div class="developer-credit">
+    <p>Developer: Rana</p>
+</div>
+    <!-- Include custom JavaScript -->
+    <script src="script.js"></script>
+</body>
