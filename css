@@ -1,0 +1,53 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player, .computer {
+    width: 200px;
+}
+
+.choices {
+    font-size: 3em;
+}
+
+.choice:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.result {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.developer-credit {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    animation: slide-up 5s ease infinite;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
